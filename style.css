@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container {
+    max-width: 1140px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/*Header*/
+
+header {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    border-bottom: 1px solid #423940;
+    padding: 0px 20px;
+    z-index: 10;
+}
+
+header .row {
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .name a {
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    position: relative;
+}
+
+header .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header .navbar ul li {
+    display: inline-block;
+    margin-left: 37px;
+}
+
+header .navbar ul li a {
+    font-size: 17px;
+    text-decoration: none;
+    line-height: 75px;
+    color: #ffffff;
+    font-weight: 600;
+    position: relative;
+}
+
+header .navbar ul li a:hover::before {
+    content: '';
+    height: 3PX;
+    background-color: #ffffff;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: -25px;
+    transition: all .3s ease;
+}
+
+header .navbar ul li a.active::before {
+    content: '';
+    height: 3PX;
+    background-color: #ffffff;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: -25px;
+    transition: all .3s ease;
+}
+
+
+/*Home Section*/
+
+.home {
+    min-height: 100vh;
+    background-image: url("05.jpeg");
+    background-size: cover;
+    background-position: center;
+    padding: 15px;
+}
+
+.home .text-container {
+    min-height: 80vh;
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: 800px;
+}
+
+.home .text-container .homerow .block-container {
+    flex: 0 0 75%;
+    /* min-height: 50vh; */
+    margin: 50px;
+    margin-top: 15rem;
+    left: 75%;
+    border-left: 5px solid #ffffff;
+    border-top: 50px;
+    /* background-color: black; */
+    padding: 1rem 0 0 2rem;
+}
+
+.home .text-container .homerow h2 {
+    color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+    font-weight: 350;
+    margin-right: 15px;
+    padding: 0;
+    line-height: 0.1;
+}
+
+.home .text-container .homerow h1 {
+    color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 60px;
+    margin-left: 30px;
+    font-weight: 600;
+    padding: 0;
+    line-height: 1;
+}
+
+.home .text-container .homerow h3 {
+    color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+}
+
+.home .text-container .homerow .cv-btn a {
+    border-radius: 4px;
+    color: #ffffff;
+    height: 100%;
+    width: 200px;
+    border: 1px solid #ffffff;
+    padding: 20px 35px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all .5s ease;
+    background-color: transparent;
+}
+
+.home .text-container .homerow .cv-btn a:hover {
+    background-color: #ffffff;
+    color: #59e717;
+}
+
+
+/*About section */
+
+.about-me {
+    padding: 100px 50px;
+    position: absolute;
+    font-family: 'Times New Roman';
+}
+
+.about-me .section-title {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 35px;
+}
+
+.about-me .section-title h1 {
+    display: inline-block;
+    font-size: 35px;
+    text-transform: uppercase;
+    position: relative;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 15px;
+    padding-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.about-me .section-title h1:before {
+    content: '';
+    left: 0;
+    position: absolute;
+    height: 2px;
+    right: 35%;
+    background-color: #febd01;
+    bottom: 0px;
+}
+
+.text-uppercase {
+    text-transform: uppercase!important;
+    letter-spacing: 2px;
+}
+
+.about-me .section-title p.small {
+    display: block;
+    font-size: 14px;
+    color: #838383;
+    font-weight: 400;
+}
+
+.about-me .about-content {
+    letter-spacing: 1px;
+    font-size: auto;
+}
+
+.about-me .img {
+    flex: 0 0 150%;
+    margin-right: 12px;
+    margin-bottom: 7px;
+    padding: 2px;
+}
+
+.about-me .about-content .img img {
+    display: block;
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 7px;
+    border: solid black 1px;
+    padding: 2px;
+}
+
+.about-me .about-content .text {
+    margin-bottom: 10px;
+    flex: 0 0 350px;
+    letter-spacing: 1px;
+}
+
+.about-me .about-content .text h3 {
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(63, 63, 66);
+}
+
+.about-me .about-content .text h5 {
+    font-size: 20px;
+    font-weight: 550;
+    line-height: 40px;
+    color: rgb(63, 63, 66);
+}
+
+.about-me .about-content .text p {
+    text-align: justify;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+    color: rgb(63, 63, 66);
+}
+
+.about-me .about-content .text .info .list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    justify-content: space-between;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 7px;
+}
+
+.about-me .about-content .text .info .list label {
+    padding-right: 10px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.about-me .about-content .text .info .list p {
+    margin: 0;
+}
+
+
+/* Contact */
+
+.contact-me .container .section-title {
+    margin-top: 8rem;
+    padding-right: 16rem;
+    text-align: left;
+}
+
+.contact-me .container .social- links {
+    padding-top: 35px;
+}
+
+.contact-me .container .social-links a {
+    height: 80px;
+    width: 80px;
+    padding-top: 13px;
+    background-color: #000000;
+    border-radius: 8px;
+    display: inline-block;
+    border: 1px solid #000000;
+    line-height: 31px;
+    text-align: center;
+    margin: 5px 25px;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.contact-me .container .social-links a:hover {
+    background-color: transparent;
+}
+
+.contact-me .container .social-links a .fa {
+    color: #ffffff;
+    font-size: 55px;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.contact-me .container .social-links a:hover .fa {
+    color: #000000;
+    text-align: center;
+}
+
+
+/* Github-Repo */
+
+.github-repo .container .section-title {
+    margin-top: 7rem;
+}
+
+.github-repo .container .repo-link {
+    margin-left: 35px;
+    font-size: 28px;
+}
+
+.github-repo .container .github-btn a {
+    text-align: center;
+    margin-top: 13px;
+    border-radius: 6px;
+    color: #030303;
+    height: 100%;
+    width: 200px;
+    border: 1px solid #cecaca;
+    padding: 20px 35px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 600;
+    transition: all .5s ease;
+    background-color: transparent;
+}
+
+.github-repo .container .github-btn a:hover {
+    background-color: #ffffff;
+    color: #59e717;
+}
+
+
+/* github repo */
+
+.github-repo .container .repos-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 7px;
+}
+
+.github-repo .container .repos-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 10px;
+    color: #000000;
+    font-weight: 600;
+    position: relative;
+}
+
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+#repo__container-list li {
+    margin: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #cecaca;
+    text-align: center;
+    justify-content: start;
+}
+
+#repo__container-list li h2,
+p,
+a {
+    padding: 10px;
+    font-size: larger;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#repo__container-list li h2 {
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+#projectShow {
+    background-color: rosybrown;
+    width: 150px;
+    height: 50px;
+    margin-top: 50px;
+    border-radius: 20px;
+    border: none;
+}

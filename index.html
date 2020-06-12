@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- loading content -->
+    <div id="contentload">
+        <h1>Loading...</h1>
+    </div>
+    <!--Start Header-->
+    <div id="main">
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="name">
+                        <a href="#" class="logo">NIRVAY</a>
+                    </div>
+                    <div class="navbar">
+                        <ul>
+                            <li><a href="#homesection" class="active">Home</a></li>
+                            <li><a href="#about-section">About Me</a></li>
+                            <li><a href="#contact-info">Contact Me</a></li>
+                            <li><a href="#github-repo">My GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--End Header-->
+
+        <!--Start Home-->
+        <section class="home">
+            <a id="home-section"></a>
+            <div class="text-container">
+                <div class="homerow">
+                    <div class="block-container">
+                        <h2>Hello! My name is </h2><br>
+                        <h1>Nirvay Chaudhary</h1><br>
+                        <h3>Django Web Developer</h3><br>
+                        <div class="cv-btn">
+                            <a href="">Show CV</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Header-->
+        <!--Start About-->
+        <section class="about-me">
+            <a id="about-section"></a>
+            <div class="container">
+                <div class="row">
+                    <div class="section-title">
+                        <h1>About Me</h1>
+                        <p class="small text-uppercase">Information About Me</p>
+                    </div>
+                </div>
+                <div class="img-row">
+                    <div class="about-content">
+                        <div class="img">
+                            <figure><img src="02.jpeg" alt="about-me" height="0%" width="32%"></figure>
+                        </div>
+                        <div class="text">
+                            <h3>I'M Nirvay Chaudhary</h3>
+                            <h5>I am Django Developer</h5>
+                            <p>I developed this portfolio after getting mentorship form Insight Workshop Academy. I'm Learing Software Engineering at Inshight Workshop Academy. Apart of that, i'm web developer in python framework i.e. Django as well as i
+                                love cooking. </p>
+                            <div class="info">
+                                <div class="list">
+                                    <label>Birthday:</label>
+                                    <p>13<sup>th</sup> July, 2000</p>
+                                </div>
+                                <div class="list">
+                                    <label>College:</label>
+                                    <p>Virinchi College</p>
+                                </div>
+                                <div class="list">
+                                    <label>High School:</label>
+                                    <p>Gorkha International Public Secondary School</p>
+                                </div>
+                                <div class="list">
+                                    <label>S.L.C:</label>
+                                    <p>Rosy Buds BalBatika Secondary School</p>
+                                </div>
+                                <div class="list">
+                                    <label>Residence:</label>
+                                    <p>New Baneshwor, Kathmandu, Nepal</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <section class="contact-me">
+                <a id="contact-info"></a>
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title">
+                            <h1>Contact Info</h1>
+                            <p class="small text-uppercase">Social Media Contact Links</p>
+                        </div>
+                    </div>
+
+                    <!--social Media-->
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/nirvay.chaudhary/"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/fearlessnirvay/"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/nirvay-chaudhary-63a7b5179/"><i
+                                class="fa fa-linkedin"></i></a>
+                        <a href="https://nirvayachaudhary6145ns@gmail.com"><i class="fa fa-envelope"
+                                aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </section>
+
+            <!--github -repo -->
+            <section class="github-repo">
+                <a id="github-repo"></a>
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title">
+                            <h1>My GitHub</h1>
+                        </div>
+                    </div>
+                    <div class="repo-link">
+                        <h4>Wanna Visit My GitHub</h4>
+                        <div class="github-btn">
+                            <a href="" target="__blank" id="githublink">Github</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="repo-btn project-btn">
+                <button id="projectShow">My Project</button>
+                <p id="created"></p>
+            </div>
+
+            <div class="repo-list">
+                <div id="pub_repo">
+                    <div id="repo__container-list" class="invisible">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+
+
+    <script>
+        const container = document.getElementById('repo__container-list');
+        const toggleProject = document.querySelector('#projectShow');
+
+        toggleProject.addEventListener('click', function() {
+            container.classList.toggle('visible');
+        });
+
+        const projectList = (name, commits, clone) => {
+            const newprojectElement = document.createElement('li');
+            newprojectElement.innerHTML = `
+            <div class="project__info">
+                
+                    <h2 class="title">${name}</h2>
+                    <p>${commits}</p>    
+                    <a class="gotoMypage" href="${clone}" target="__blank">click me</a>  
+                         
+            </div>
+        `;
+
+            container.append(newprojectElement);
+        }
+
+        fetch("https://api.github.com/users/nirvaychaudhary ")
+            .then(response => response.json())
+            .then(function(data) {
+                console.log(data)
+                let locate = data['location']
+                let publicrepos = data['public_repos']
+
+                let my_repo = `I have ${publicrepos} public repositories on my Github account.`
+                document.getElementById('githublink').href = data['html_url']
+                document.getElementById('pub_repo').textcontent = my_repo
+
+                document.getElementById('main').hidden = false
+                document.getElementById('contentload').hidden = true
+            })
+
+        fetch("https://api.github.com/users/nirvaychaudhary/repos")
+            .then(response => response.json())
+            .then(function(repo_data) {
+                console.log(repo_data);
+
+                for (i = 0; i < 6; i++) {
+                    const name1 = repo_data[i].name;
+                    const commits = repo_data[i].full_name;
+                    const clone = repo_data[i].html_url;
+                    projectList(name1, commits, clone);
+                }
+            })
+    </script>
+</body>
+
+</html>
